@@ -26,19 +26,22 @@ Add-PasswordVaultEntry -Username "MyUsername@domain" -Password "hunter2" -Resour
 #Hash an extra proprty into the Resource field to allow storing multiple secrets of the same category
 $CustomerAccount = "Omnicorp"
 Add-PasswordVaultEntry -Username "MyUsername@domain" -Password "hunter2" -Resource "AppAPIKey#$CustomerAccount"
-Get-PasswordVaultEntry | ?{$_.Resource -like "AppAPIKey*$CustomerAccount"} | Get-PasswordVaultEntry
+Get-PasswordVaultEntry | ?{$_.Resource -like "AppAPIKey#$CustomerAccount"} | Get-PasswordVaultEntry
 ```
 
 
 #Credit
-Tobias Burger for the P/Invoke code in the Get-CMStoredCredential function. Github and gist links are included in the comment-based help for that function. Apologies for not properly forking; I'm still finding my way with git.
+@toburger for the P/Invoke code in the Get-CMStoredCredential function. Found via @cdhunt
+Github and gist links are included in the comment-based help for that function. Apologies for not properly forking; I'm still finding my way with git.
 
 
 #License
 The MIT License
 
 Get-CMStoredCredential function: Copyright (c) 2012 Tobias Burger
+
 Other functions: Copyright (c) 2015 Freddie Sackur, Rackspace
+
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
