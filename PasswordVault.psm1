@@ -40,7 +40,6 @@
         ConvertTo-Plaintext ([SecureString]$SecureString)
 
     Author: Freddie Sackur
-    Github: https://github.rackspace.com/mich8638/Jimmy
     Minimum OS: Win7
     Minimum PoSh: 3.0
     Date: 15/2/16
